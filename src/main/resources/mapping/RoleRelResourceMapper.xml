@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hewc.mapper.RoleRelResourceMapper" >
+  <resultMap id="BaseResultMap" type="com.hewc.model.RoleRelResource" >
+    <result column="roleId" property="roleid" jdbcType="BIGINT" />
+    <result column="resourceId" property="resourceid" jdbcType="BIGINT" />
+    <result column="delete_flag" property="deleteFlag" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="com.hewc.model.RoleRelResource" >
+    insert into role_resource (roleId, resourceId, delete_flag
+      )
+    values (#{roleid,jdbcType=BIGINT}, #{resourceid,jdbcType=BIGINT}, #{deleteFlag,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.hewc.model.RoleRelResource" >
+    insert into role_resource
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="roleid != null" >
+        roleId,
+      </if>
+      <if test="resourceid != null" >
+        resourceId,
+      </if>
+      <if test="deleteFlag != null" >
+        delete_flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="roleid != null" >
+        #{roleid,jdbcType=BIGINT},
+      </if>
+      <if test="resourceid != null" >
+        #{resourceid,jdbcType=BIGINT},
+      </if>
+      <if test="deleteFlag != null" >
+        #{deleteFlag,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>
