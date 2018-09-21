@@ -23,8 +23,9 @@ public class LoginController {
         Subject subject = SecurityUtils.getSubject();
         try {
             subject.login(token);
-            return "/user/list";
+            return "redirect:/user/list";
         }catch (Exception e){
+            e.printStackTrace();
             return "login";
         }
     }

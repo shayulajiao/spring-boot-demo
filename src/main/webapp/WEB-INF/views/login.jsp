@@ -7,15 +7,15 @@
 </head>
 <body>
     <form action="/doLogin" method="post">
-        <table>
+        <table align="center">
             <tr>
                 <td>
-                    用户名  <input type="text" name="username">
+                    用户名  <input type="text" name="userName">
                 </td>
             </tr>
             <tr>
                 <td>
-                    密码  <input type="password" name="password">
+                    密码  <input type="password" name="passWord">
                 </td>
             </tr>
             <tr>

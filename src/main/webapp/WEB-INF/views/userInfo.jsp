@@ -22,25 +22,19 @@
                 </td>
             <tr>
                 <td>
-                    <input type="hidden" id="userId" name="userId" value="${user.userId}"/>
+                    <input type="hidden" id="userId" name="userId" value="${user.id}"/>
                 </td>
             </tr>
             <tr>
                 <td style="font-size: 15px;">姓名</td>
                 <td>
-                    <input type="text" id="userName" name="userName" value="${user.userName}" required="true"/>
+                    <input type="text" id="userName" name="userName" value="${user.username}" required="true"/>
                 </td>
             </tr>
             <tr>
                 <td style="font-size: 15px;">密码</td>
                 <td>
                     <input type="text" id="password" name="password" value="${user.password}" required="true"/>
-                </td>
-            </tr>
-            <tr>
-                <td style="font-size: 15px;">手机号</td>
-                <td>
-                    <input type="text" id="phone" name="phone" value="${user.phone}" required="true" />
                 </td>
             </tr>
             <tr>
