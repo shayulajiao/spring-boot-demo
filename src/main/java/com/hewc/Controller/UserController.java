@@ -3,6 +3,8 @@ package com.hewc.Controller;
 import com.hewc.Service.UserService;
 import com.hewc.model.User;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +24,7 @@ public class UserController {
     @Resource
     private UserService userService;
 
+    @RequiresPermissions("user:list")
     @RequestMapping("/list")
     public ModelAndView findAllUsers(){
         ModelAndView modelAndView = new ModelAndView("userList");
@@ -30,6 +33,7 @@ public class UserController {
         return modelAndView;
     }
 
+    @RequiresPermissions(value={"user:update","user:add"},logical = Logical.OR)
     @RequestMapping("/userInfo")
     public ModelAndView userInfo(HttpServletRequest request){
         ModelAndView modelAndView = new ModelAndView("userInfo");
@@ -41,6 +45,7 @@ public class UserController {
         return modelAndView;
     }
 
+    @RequiresPermissions("user:delete")
     @RequestMapping("/delete/{id}")
     public Object delete(@PathVariable String id){
         userService.deleteByPrimaryKey(Integer.valueOf(id));

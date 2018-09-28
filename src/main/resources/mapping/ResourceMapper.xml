@@ -115,7 +115,7 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
   
-  <select id="findResourceByRole" parameterType="string" resultType="string">
-    SELECT srs.name from sys_resouce srs LEFT JOIN role_resource rr on srs.id = rr.resourceId where rr.roleId = #{parameter_,jdbcType=BIGINT}
+  <select id="findResourceByRole" parameterType="long" resultType="string">
+    SELECT srs.name from sys_resource srs LEFT JOIN role_resource rr on srs.id = rr.resourceId where rr.roleId = #{_parameter,jdbcType=BIGINT}
   </select>
 </mapper>
