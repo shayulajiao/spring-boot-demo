@@ -9,7 +9,7 @@
     </head>
 
     <body>
-        <form id="listForm" action="/user/userInfo">
+        <form id="listForm">
             <table  width="50%" cellspacing="0" cellpadding="0" border="0" align="center">
                 <tr align="center">
                     <td>编号</td>
@@ -30,11 +30,6 @@
                         </td>
                     </tr>
                 </c:forEach>
-                <tr>
-                    <td>
-                        <input type="submit" value="添加用户">
-                    </td>
-                </tr>
             </table>
         </form>
     </body>

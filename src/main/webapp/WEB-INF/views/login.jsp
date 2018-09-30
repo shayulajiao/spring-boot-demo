@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
+<script src="<c:url value='/js/jquery-1.11.1.min.js' />"></script>
 <head>
     <title>登录页面</title>
 </head>
@@ -22,9 +23,20 @@
                 <td>
                     <input type="submit" value="登录">
                 </td>
+                <td>
+                    <input type="button" id="register" value="注册">
+                </td>
             </tr>
         </table>
 
     </form>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#register").click(function () {
+                window.location.href = "<c:url value='/register'/>";
+            });
+        });
+    </script>
 </body>
 </html>

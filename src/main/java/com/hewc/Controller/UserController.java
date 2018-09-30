@@ -33,7 +33,7 @@ public class UserController {
         return modelAndView;
     }
 
-    @RequiresPermissions(value={"user:update","user:add"},logical = Logical.OR)
+    @RequiresPermissions(value={"user:update"},logical = Logical.OR)
     @RequestMapping("/userInfo")
     public ModelAndView userInfo(HttpServletRequest request){
         ModelAndView modelAndView = new ModelAndView("userInfo");
@@ -67,4 +67,5 @@ public class UserController {
         map.put("success",true);
         return map;
     }
+
 }

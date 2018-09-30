@@ -1,5 +1,6 @@
 package com.hewc.Controller;
 
+import com.hewc.model.User;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
@@ -28,5 +29,10 @@ public class LoginController {
             e.printStackTrace();
             return "login";
         }
+    }
+
+    @RequestMapping("/register")
+    public String register(){
+        return "userInfo";
     }
 }
